@@ -1,10 +1,10 @@
 /* @flow */
 /**
- * Main application component, handles the routing.  
+ * Main application component, handles the routing.
  */
 import React, { Component } from 'react';
-import { StatusBar } from 'react-native';
-import { Image, View } from 'react-native-animatable';
+import { ImageBackground, StatusBar } from 'react-native';
+import { View } from 'react-native-animatable';
 import { inject, observer } from 'mobx-react/native';
 import backgroundImg from 'src/images/bg.jpg';
 import Playground from 'src/containers/Playground';
@@ -42,10 +42,10 @@ export default class App extends Component<Props, Props, void> {
         break;
     }
     return (
-      <Image source={backgroundImg} style={styles.container}>
+      <ImageBackground source={backgroundImg} style={styles.container}>
         <StatusBar hidden={true} />
         {content}
-      </Image>
+      </ImageBackground>
     );
   }
 }

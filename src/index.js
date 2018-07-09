@@ -2,25 +2,22 @@
 import React, { Component } from 'react';
 import { Provider } from 'mobx-react/native';
 
-// import App from 'src/containers/App';
-// import GameStore from 'src/stores/game';
-// import RouterStore from 'src/stores/router';
+import App from 'src/containers/App';
+import GameStore from 'src/stores/game';
+import RouterStore from 'src/stores/router';
 
 import { View } from 'react-native';
 
-// const gameStore = new GameStore();
-// const routerStore = new RouterStore();
+const gameStore = new GameStore();
+const routerStore = new RouterStore();
 
 export class TapTheNumber extends Component {
   render() {
     return (
-      <View/>
+      <Provider game={gameStore} router={routerStore}>
+        <App />
+      </Provider>
     );
-    // return (
-    //   <Provider game={gameStore} router={routerStore}>
-    //     <App />
-    //   </Provider>
-    // );
   }
 }
 
